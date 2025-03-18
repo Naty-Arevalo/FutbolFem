@@ -1,0 +1,24 @@
+.navbar{
+    /* background-color: rgb(164 152 152 / 65%); */
+    background-color: rgb(2, 2, 2);
+}
+.navbar-bloque{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+
+}
+.bloque-links-ul{
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    padding: 10px;
+
+}
+.navbar-enlaces a{
+    color: white;
+
+    
+    
+}
