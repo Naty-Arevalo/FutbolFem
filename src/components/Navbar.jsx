@@ -1,37 +1,55 @@
+'use client';
+
 import Link from "next/link";
 import Image from "next/image";
 import './navbar.css'
+import DehazeIcon from '@mui/icons-material/Dehaze';
+import CloseIcon from '@mui/icons-material/Close';
+import { useState } from "react";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="navbar">
       <div className="navbar-bloque">
         <Link href="/">
           <Image src="/logobyn.webp" width={100} height={100} alt="Logo" />
         </Link>
-        <div className="bloque-links">
+
+{/*Boton de menu Hambuerguesa*/}
+        <button 
+        className="menu-toggle" 
+        onClick={()=> setOpen(!open)
+        }         
+          >
+          {open ? <CloseIcon fontSize="large"/> : <DehazeIcon fontSize="large" />}
+        </button>
+
+{/*Menu*/}
+        <div className= {`bloque-links ${open ? 'open' : ''}`}>
           <ul className="bloque-links-ul">
             <li className="navbar-enlaces">
-              <Link href="./about">Quienes Somos</Link>
+              <Link href="./about" onClick={()=>setOpen(false)}>Quienes Somos</Link>
             </li>
             <li className="navbar-enlaces">
-              <Link href="./futbolfemhaedo">FUTBOL FEM Haedo</Link>
+              <Link href="./futbolfemhaedo" onClick={()=>setOpen(false)}>FUTBOL FEM Haedo</Link>
             </li>
             <li className="navbar-enlaces"> 
-              <Link href="./futbolfemituza">FUTBOL FEM Ituzaingo</Link>
+              <Link href="./futbolfemituza" onClick={()=>setOpen(false)}>FUTBOL FEM Ituzaingo</Link>
             </li>
             <li className="navbar-enlaces">
-              <Link href="./futbolfempalomar">FUTBOL FEM Palomar</Link>
+              <Link href="./futbolfempalomar" onClick={()=>setOpen(false)}>FUTBOL FEM Palomar</Link>
             </li>
             <li className="navbar-enlaces">
-              <Link href="./futbolfemramos">FUTBOL FEM Ramos</Link>
+              <Link href="./futbolfemramos" onClick={()=>setOpen(false)}>FUTBOL FEM Ramos</Link>
             </li>
             <li className="navbar-enlaces">
-              <Link href="./futbol7">FUTBOL 7
+              <Link href="./futbol7" onClick={()=>setOpen(false)}>FUTBOL 7
               </Link>
             </li>
             <li className="navbar-enlaces"> 
-              <Link href="/#contacto">Contacto</Link> 
+              <Link href="/#contacto" onClick={()=>setOpen(false)}>Contacto </Link> 
             </li>
           </ul>
         </div>

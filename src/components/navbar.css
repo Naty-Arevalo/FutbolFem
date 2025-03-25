@@ -1,24 +1,100 @@
-.navbar{
-    /* background-color: rgb(164 152 152 / 65%); */
-    background-color: rgb(2, 2, 2);
-}
-.navbar-bloque{
+
+ /* background-color: rgb(164 152 152 / 65%); */
+ .navbar{
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+ }
+ .navbar-bloque{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 20px;
-
-}
-.bloque-links-ul{
+    width: 100%;
+    position: relative;
+ }
+ .bloque-links{
+    display: flex;
+ }
+ .bloque-links-ul{
     display: flex;
     list-style: none;
     gap: 2rem;
     padding: 10px;
-
-}
-.navbar-enlaces a{
+ }
+ .navbar-enlaces a{
     color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+ }
+ .menu-toggle{
+    display: none;
+    background:#333;
+    /* display: block !important; */
+    border: none;
+    color: white;
+    cursor: pointer;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 5px 10px;
+ }
 
-    
-    
-}
+ /*estilos escritorio */
+ @media screen and (min-width: 768px){
+    .bloque-links{
+        display: flex !important;
+    }
+ }
+/*estilos moviles */
+ @media screen and (max-width: 767px){
+    .bloque-links{
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #222;
+        /* flex-direction: column;
+         */
+        align-items: center;
+        padding: 10px;
+        border: solid pink 1px;
+    }
+    .bloque-links.open{
+        display: flex;
+    }
+    .menu-toggle{
+        display: block;
+    }
+    .bloque-links-ul{
+        display: flex;
+        flex-direction: column;
+    }
+    /* 
+    .menu-toggle.active{
+        display: block;
+    }
+    .bloque-links-ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background-color: #333;
+        width: 50%;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        display: none;
+    }
+    .bloque-links-ul.active{
+        display: flex;
+    }
+    .bloque-links-ul li{
+        padding: 10px;
+    }
+    .bloque-links-ul a{
+        color: white;
+    } */
+ }
