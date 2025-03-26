@@ -1,8 +1,8 @@
 
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import "./globals.css"
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
 export const metadata = {
   title: "FutbolFem",
