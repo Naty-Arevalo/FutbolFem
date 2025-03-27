@@ -46,7 +46,7 @@ export default function Home() {
               src="/Escudo_Palomar_transparencia.png"
               width={150}
               height={150}
-              alt="escudo haedo"
+              alt="escudo palomar"
               className="escudo-haedo shadow-custom rounded-3xl"
             />
           </Link>
@@ -57,22 +57,22 @@ export default function Home() {
               src="/Escudo_Ramos_transparencia.png"
               width={150}
               height={150}
-              alt="escudo haedo"
+              alt="escudo ramos"
               className="escudo-haedo shadow-custom rounded-3xl"
             />
           </Link>
         </div>
-        <div>
+        {/* <div>
           <Link href="./futbol7">
             <Image
               src="/Escudo_F7_transparencia.png"
               width={150}
               height={150}
-              alt="escudo haedo"
+              alt="escudo 7"
               className="escudo-haedo shadow-custom rounded-3xl"
             />
           </Link>
-        </div>
+        </div> */}
       </section>
       <section className="text-center p-4">
         <h2 className="text-white text-3xl p-3">
@@ -126,7 +126,7 @@ export default function Home() {
           Seguinos en nuestras redes sociales para estar al tanto de todas las
           novedades y eventos
         </p>
-        <div className="flex flex-column justify-around items-end gap-2">
+        <div className="flex flex-row justify-around items-end gap-4">
           <div className="flex flex-column gap-2">
             <Link
               href={"https://www.instagram.com/futbolfem2025/"}
