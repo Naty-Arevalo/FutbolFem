@@ -126,8 +126,8 @@ export default function Home() {
           Seguinos en nuestras redes sociales para estar al tanto de todas las
           novedades y eventos
         </p>
-        <div className="flex flex-row justify-around items-end gap-2">
-          <div className="flex flex-colum gap-2">
+        <div className="flex flex-column justify-around items-end gap-2">
+          <div className="flex flex-column gap-2">
             <Link
               href={"https://www.instagram.com/futbolfem2025/"}
               target="blank"
