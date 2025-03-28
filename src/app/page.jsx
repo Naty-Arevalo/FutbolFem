@@ -85,7 +85,7 @@ export default function Home() {
           deporte. Creemos en el potencial de cada jugadora y en la importancia
           del trabajo en equipo para alcanzar nuevas metas.
         </p>
-        <h3 className="text-white">Que Aprenderás?</h3>
+        <h3 className="text-white text-2xl pt-2">Que Aprenderás?</h3>
         <p className="text-white">
           Táctica: Posicionamiento en la cancha, estrategias de juego y toma de
           decisiones en equipo. <br />
@@ -96,14 +96,14 @@ export default function Home() {
           Preparación Física y Mental: Ejercicios para mejorar la resistencia,
           velocidad y concentración en el partido.{" "}
         </p>
-        <h3 className="text-white">Como Te Ayuda?</h3>
+        <h3 className="text-white text-2xl pt-2">Como Te Ayuda?</h3>
         <p className="text-white">
           Nuestro entrenamiento te permitirá desarrollar habilidades que van más
           allá del campo de juego. No solo mejorarás tu desempeño físico y
           técnico, sino también la confianza en ti misma, el trabajo en equipo y
           la disciplina.
         </p>
-        <p className="text-white">¡Tú Puedes Ser Parte del Equipo!</p>
+        <p className="text-white text-2xl pt-2">¡Tú Puedes Ser Parte del Equipo!</p>
         <p className="text-white">
           Sabemos que cada jugadora tiene su propio ritmo de aprendizaje, por
           eso todas tienen la oportunidad de formar parte de un equipo para
@@ -116,10 +116,10 @@ export default function Home() {
       </section>
 
       <section
-        className="text-center text-white p-4 border-t-2 w-1/2 mx-auto border-white "
+        className=" text-white py-4  border-t-2 w-3/4 mx-auto border-white md:text-center "
         id="contacto"
       >
-        <h1>Contactanos</h1>
+        <h1 className="font-bold text-3xl">Contactanos</h1>
         <p >
           Para más información sobre nuestras clases, horarios y ubicaciones, no
           dudes en contactarnos. <br />
@@ -127,11 +127,12 @@ export default function Home() {
           novedades y eventos
         </p>
         <div className="flex flex-row justify-around items-end gap-4">
-          <div className="flex flex-column gap-2">
+          <div className="flex flex-column gap-2 ">
             <Link
               href={"https://www.instagram.com/futbolfem2025/"}
               target="blank"
-              className="no-underline"
+              className="no-underline flex gap-2 p-2 text-gray-400"
+              
             >
               {" "}
               <span>
@@ -142,7 +143,7 @@ export default function Home() {
             <Link
               href={"https://www.instagram.com/futbolfemhaedo/"}
               target="blank"
-              className="no-underline"
+              className="no-underline  flex gap-2 p-2 text-gray-400"
             >
               {" "}
               <span>
@@ -153,7 +154,7 @@ export default function Home() {
             <Link
               href={"https://www.instagram.com/futbolfemituzaingo/"}
               target="blank"
-              className="no-underline"
+              className="no-underline  flex gap-2 p-2 text-gray-400"
             >
               <span>
                 <Instagram />
@@ -163,7 +164,7 @@ export default function Home() {
             <Link
               href={"https://www.instagram.com/futbolfemramosmejia/"}
               target="blank"
-              className="no-underline"
+              className="no-underline  flex gap-2 p-2 text-gray-400"
             >
               {" "}
               <span>
@@ -174,7 +175,7 @@ export default function Home() {
             <Link
               href={"https://www.instagram.com/futbolfempalomar/"}
               target="blank"
-              className="no-underline"
+              className="no-underline  flex gap-2 p-2 text-gray-400"
             >
               {" "}
               <span>

@@ -27,7 +27,7 @@ export default function Navbar() {
         </button>
 
 {/*Menu*/}
-        <div className= {`bloque-links ${open ? 'open' : ''}`}>
+        <div className= {`bloque-links ${open ? 'open' : ''} fixed top-10 left-0   z-50 isolation-isolate md:static md:w-auto`}>
           <ul className="bloque-links-ul">
             <li className="navbar-enlaces">
               <Link href="./about" onClick={()=>setOpen(false)}>Quienes Somos</Link>

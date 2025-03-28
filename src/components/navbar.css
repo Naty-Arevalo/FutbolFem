@@ -2,7 +2,7 @@
  /* background-color: rgb(164 152 152 / 65%); */
  .navbar{
     background-color: #333;
-    padding: 15px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,15 +52,16 @@
     .bloque-links{
         display: none;
         position: absolute;
-        top: 60px;
+        top: 80px;
         right: 0;
         width: 100%;
-        background-color: #222;
+        background-color: #080808;
         /* flex-direction: column;
          */
-        align-items: center;
-        padding: 10px;
+        /* align-items: center; */
+        padding: 5px;
         border: solid pink 1px;
+        border-radius: 20px;
     }
     .bloque-links.open{
         display: flex;

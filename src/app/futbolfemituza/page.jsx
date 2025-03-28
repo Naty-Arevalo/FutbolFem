@@ -6,7 +6,7 @@ export default function Ituzaingo() {
   const [showMap, setShowMap] = useState(false);
 
   return (
-    <div className="flex flex-col justify-around items-center bg-black">
+    <div className="flex flex-col gap-4 items-center p-2">
       <div >
         <Image
           src="/Escudo_Ituza_transparencia.png"
@@ -17,15 +17,15 @@ export default function Ituzaingo() {
         />
       </div>
       <div>
-        <h1 className="text-green-700">Futbol Fem Ituzaingó</h1>
-        <p className="text-white text-2xl">Estamos en: Ventura Alegre 1097 </p>
+        <h1 className="text-green-700 text-3xl">Futbol Fem Ituzaingó</h1>
+        <p className="text-white ">Estamos en: Ventura Alegre 1097 </p>
         <button
           onClick={() => setShowMap(!showMap)}
           className="bg-green-400 p-2 rounded-md text-xs"
         >
           {showMap ? "Ocultar Mapa" : "Ver Mapa"}
         </button>
-        <p className="text-white text-2xl mb-4">
+        <p className="text-white  my-3">
           Días: <br /> Lunes y Miercoles de 20 a 21hs{" "}
         </p>
         {showMap && (

@@ -5,26 +5,26 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='flex flex-row justify-around gap-10 items-center p-4 '>
-          <div>
-            <Image src="/Escudo_Haedo_transparencia.png" alt="escudo Haedo" width={200} height={200}
+    <div className='flex flex-col gap-4 items-center p-2'>
+          <div className='relative z-10'>
+            <Image src="/Escudo_Haedo_transparencia.png" alt="escudo Haedo" width={150} height={150}
             style={{filter: "drop-shadow(-10px 4px 10px  rgb(203, 49, 49)"}} />
           </div>
           <div>
-            <h1 className='text-red-400 '>Futbol Fem Haedo</h1>           
-            <p className='text-white text-3xl'>Estamos en: La Roma <br />
+            <h1 className='text-red-400 text-3xl '>Futbol Fem Haedo</h1>           
+            <p className='text-white '>Estamos en: La Roma <br />
             <span >
-              <ArrowOutwardIcon className='text-red-400 text-6xl'/>
+              <ArrowOutwardIcon className='text-red-400 '/>
             </span> 
             Av.Rivadavia 16936</p>
-            <p className='text-white text-3xl'> 
+            <p className='text-white '> 
               <span>
-              <CalendarMonthIcon className='text-red-500 text-5xl '/>
+              <CalendarMonthIcon className='text-red-500  '/>
               </span>
             Días: <br /> Miercoles de 18 a 19hs <br />Viernes de 19 a 20hs
             </p>
           </div>
-          <div className='text-white'>
+          <div className='text-white mb-4'>
             <h2>✔️Infantil-Juveniles</h2>
             <ul>
                 <li>Iniciacion al deporte: 3 a 6 años</li>
