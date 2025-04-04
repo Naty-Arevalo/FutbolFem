@@ -6,9 +6,13 @@ import './navbar.css'
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  //el usePathename es para saber en que pagina estamos y cambiar el color del link activo
+  //el pathname es la ruta de la pagina que estamos
 
   return (
     <nav className="navbar">
@@ -30,7 +34,9 @@ export default function Navbar() {
         <div className= {`bloque-links ${open ? 'open' : ''} fixed top-10 left-0   z-50 isolation-isolate md:static md:w-auto`}>
           <ul className="bloque-links-ul">
             <li className="navbar-enlaces">
-              <Link href="./about" onClick={()=>setOpen(false)}>Quienes Somos</Link>
+              <Link href="./about" onClick={()=>setOpen(false)}
+              className={`${pathname === '/about' ? 'bg-sky-100 text-grey-200' : ''}`}
+              >Quienes Somos</Link>
             </li>
             <li className="navbar-enlaces">
               <Link href="./futbolfemhaedo" onClick={()=>setOpen(false)}>FUTBOL FEM Haedo</Link>

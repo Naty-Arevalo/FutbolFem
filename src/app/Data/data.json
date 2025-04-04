@@ -1,0 +1,114 @@
+[
+    {
+        "club": "Futbol Fem Haedo",
+        "imagen": "/Escudo_Haedo_transparencia.png",
+        "ubicacion": {
+          "nombre": "La Roma",
+          "direccion": "Av. Rivadavia 16936"
+        },
+        "ver_mapa": true,
+        "dias_y_horarios": [
+          {
+            "dia": "Miércoles",
+            "horario": "18:00 - 19:00"
+          },
+          {
+            "dia": "Viernes",
+            "horario": "19:00 - 20:00"
+          }
+        ],
+        "categorias": [
+          {
+            "nombre": "Iniciación al deporte",
+            "edades": "3 a 6 años"
+          },
+          {
+            "nombre": "Fútbol infantil",
+            "edades": "7 a 12 años"
+          },
+          {
+            "nombre": "Fútbol juveniles",
+            "edades": "13 a 17 años"
+          },
+          {
+            "nombre": "+17 / Adultas",
+            "edades": "17 años en adelante"
+          }
+        ]
+    },
+    {
+        "club": "Futbol Fem Ituzaingó",
+        "imagen": "/Escudo_Ituza_transparencia.png",
+        "ubicacion": {
+          "nombre": "El Atlético",
+          "direccion": "Ventura Alegre 1097"
+        },
+        "ver_mapa": true,
+        "dias_y_horarios": [
+          {
+            "dia": "Lunes",
+            "horario": "18:00 - 19:00"
+          },
+          {
+            "dia": "Viernes",
+            "horario": "19:00 - 20:00"
+          }
+        ],
+        "categorias": [
+          {
+            "nombre": "+17 / Adultas",
+            "edades": "17 años en adelante"
+          }
+        ]
+    },
+    {
+        "club": "Futbol Fem Palomar",
+        "imagen": "/Escudo_Palomar_transparencia.png",
+        "ubicacion": {
+          "nombre": "La Estación Futbol",
+          "direccion": "Ciudad Jardín, Frente a la Estación El Palomar"
+        },
+        "ver_mapa": true,
+        "dias_y_horarios": [
+          {
+            "dia": "Lunes",
+            "horario": "18:00 - 19:00"
+          },
+          {
+            "dia": "Viernes",
+            "horario": "19:00 - 20:00"
+          }
+        ],
+        "categorias": [
+          {
+            "nombre": "+17 / Adultas",
+            "edades": "17 años en adelante"
+          }
+        ]
+    },
+    {
+        "club": "Futbol Fem Ramos Mejía",
+        "imagen":"/Escudo_Ramos_transparencia.png",
+        "ubicacion": {
+          "nombre": "Container FC",
+          "direccion": "Necochea 955"
+        },
+        "ver_mapa": true,
+        "dias_y_horarios": [
+          {
+            "dia": "Lunes",
+            "horario": "18:00 - 19:00"
+          },
+          {
+            "dia": "Viernes",
+            "horario": "19:00 - 20:00"
+          }
+        ],
+        "categorias": [
+          {
+            "nombre": "+17 / Adultas",
+            "edades": "17 años en adelante"
+          }
+        ]
+    }
+]
