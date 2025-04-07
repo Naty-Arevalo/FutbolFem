@@ -34,28 +34,40 @@ export default function Navbar() {
         <div className= {`bloque-links ${open ? 'open' : ''} fixed top-10 left-0   z-50 isolation-isolate md:static md:w-auto`}>
           <ul className="bloque-links-ul">
             <li className="navbar-enlaces">
-              <Link href="./about" onClick={()=>setOpen(false)}
-              className={`${pathname === '/about' ? 'bg-sky-100 text-grey-200' : ''}`}
+              <Link href="/about" onClick={()=>setOpen(false)}
+              className={`${pathname === '/about' ? 'bg-gray-600 text-neutral-400 p-1' : 'text-white'}`}
               >Quienes Somos</Link>
             </li>
             <li className="navbar-enlaces">
-              <Link href="./futbolfemhaedo" onClick={()=>setOpen(false)}>FUTBOL FEM Haedo</Link>
+              <Link href="/futbolfemhaedo" onClick={()=>setOpen(false)}
+              className={`${pathname === '/futbolfemhaedo' ? ' bg-gray-600 text-neutral-400' : 'text-white'}`}
+              >FUTBOL FEM Haedo</Link>
             </li>
             <li className="navbar-enlaces"> 
-              <Link href="./futbolfemituza" onClick={()=>setOpen(false)}>FUTBOL FEM Ituzaingo</Link>
+              <Link href="/futbolfemituza" onClick={()=>setOpen(false)}
+              className={`${pathname === '/futbolfemituza' ? 'bg-gray-600 text-neutral-400' : 'text-white'}`}
+              >FUTBOL FEM Ituzaingo</Link>
             </li>
             <li className="navbar-enlaces">
-              <Link href="./futbolfempalomar" onClick={()=>setOpen(false)}>FUTBOL FEM Palomar</Link>
+              <Link href="/futbolfempalomar" onClick={()=>setOpen(false)}
+              className={`${pathname === '/futbolfempalomar' ? 'bg-gray-600 text-neutral-400' : 'text-white'}`}
+              >FUTBOL FEM Palomar</Link>
             </li>
             <li className="navbar-enlaces">
-              <Link href="./futbolfemramos" onClick={()=>setOpen(false)}>FUTBOL FEM Ramos</Link>
+              <Link href="/futbolfemramos" onClick={()=>setOpen(false)}
+              className={`${pathname === '/futbolfemramos' ? 'bg-gray-600 text-neutral-400' : 'text-white'}`}
+              >FUTBOL FEM Ramos</Link>
             </li>
             <li className="navbar-enlaces">
-              <Link href="./futbol7" onClick={()=>setOpen(false)}>FUTBOL 7
+              <Link href="/futbol7" onClick={()=>setOpen(false)}
+              className={`${pathname === '/futbol7' ? 'bg-gray-600 text-neutral-400' : 'text-white'}`}
+              >FUTBOL 7
               </Link>
             </li>
             <li className="navbar-enlaces"> 
-              <Link href="/#contacto" onClick={()=>setOpen(false)}>Contacto </Link> 
+              <Link href="/#contacto" onClick={()=>setOpen(false)}
+              className={`${pathname === '/#contacto' ? 'bg-gray-600 text-neutral-400' : 'text-white'}`}
+              >Contacto </Link> 
             </li>
           </ul>
         </div>

@@ -1,3 +1,4 @@
+'use client'
 import { Instagram } from '@mui/icons-material'
 import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 import Link from 'next/link'
@@ -70,11 +71,10 @@ const Contacto = () => {
               FutbolFem-Palomar
             </Link>
           </div>
-          <div>
+          <div className='flex flex-column gap-2 hover:scale-110 transition-all duration-300 ease-in-out '>
             <ArrowCircleUpIcon
-              className="text-5xl"
-              // OnClick={()=> window.scrollTo({top:0, behavior:"smooth"})}
-              //ACTIVARLO CUANDO LO PASE A UN COMPONENTE. DENTRO DEL APP NO SE PUEDE PASAR A CLIENT COMPONENT
+              className="text-5xl cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             />
             <p>subir</p>
           </div>
