@@ -6,19 +6,19 @@ import Contacto from "@/components/Home/Contacto/Contacto";
 export default function Home() {
   return (
     <>
-      <section className="flex flex-col justify-between items-center p-2 m-4">
-        <p className="text-white text-3xl text-center">
+      <section className="items-center p-2 my-5">
+        <p className="text-white text-3xl lg:text-4xl xl:text-5xl text-center">
           Entrenar, Aprender y Divertirse.
           <br />
           Esa es la Propuesta
         </p>
       </section>
 
-      <section className="escudos flex justify-center items-center gap-2 p-2 border-y-2 w-1/2 mx-auto border-white">
+      <section>
         <Escudos/>
       </section>
 
-      <section className="text-center p-4">
+      <section id="quienes-somos">
         <Presentacion/>
       </section>
 

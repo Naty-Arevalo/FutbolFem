@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+
 export const metadata = {
   title: "FutbolFem - Fútbol Femenino en Zona Oeste",
   description:
@@ -62,7 +63,7 @@ export default function RootLayout({ children }) {
               url: "https://futbolfem.vercel.app",
               logo: "https://futbolfem.vercel.app/logo.png",
               sameAs: [
-                "https://www.instagram.com/futbolfem2025/", // reemplazalo por tu perfil real si es otro
+                "https://www.instagram.com/futbolfem2025/"
               ],
             }),
           }}
@@ -70,19 +71,22 @@ export default function RootLayout({ children }) {
           <link rel="icon" href="/favicon-96x96.png" type="image/png" />
       </head>
       <body>
-        <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-dvh bg-black">
+        <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-dvh bg-black/90">
           <div>
             <Navbar />
           </div>
           <div>
             <Banner />
           </div>
-          <main>{children}</main>
+          <main>
+            {children}
+          </main>
           <div>
             <Footer />
           </div>
         </div>
       </body>
     </html>
+    
   );
 }

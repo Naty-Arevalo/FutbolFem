@@ -7,19 +7,3 @@
     margin: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: #e3d9d9;
-}
-/*cambios en el AccordionBoostrp*/
-.accordion-button:not(.collapsed){
-    background-color: rgb(201, 51, 51) !important;
-    color: #773b3b !important;
-    padding: 10px !important;
-}
-.accordion-button{
-    font-size: 2rem!important;
-    
-}
-.gap-4{
-    width: 100%!important;
-}

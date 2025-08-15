@@ -5,78 +5,47 @@ import Link from 'next/link'
 import React from 'react'
 
 const Contacto = () => {
+
+  const instagramLinks = [
+    {url:"https://www.instagram.com/futbolfem2025/", label: "@futbolFem"},
+    {url:"https://www.instagram.com/futbolfemhaedo/", label: "@futbolFem-Haedo"},
+    {url:"https://www.instagram.com/futbolfemituzaingo/", label: "@futbolFem-Ituzaingo"},
+    {url:"https://www.instagram.com/futbolfemramosmejia/", label: "@futbolFem-Ramos"},
+    {url:"https://www.instagram.com/futbolfempalomar/", label: "@futbolFem-Palomar"}
+  ]
+
+
   return (<>
-    <h1 className="font-bold text-3xl">Contactanos</h1>
-        <p >
+    <h1 className="font-bold text-3xl text-white">Contactanos</h1>
+        <p className="text-gray-200/60 text-xl mb-4">
           Para más información sobre nuestras clases, horarios y ubicaciones, no
           dudes en contactarnos. <br />
           Seguinos en nuestras redes sociales para estar al tanto de todas las
           novedades y eventos
         </p>
         <div className="flex flex-row justify-around items-end gap-4">
-          <div className="flex flex-column gap-2 ">
-            <Link
-              href={"https://www.instagram.com/futbolfem2025/"}
-              target="blank"
-              className="no-underline flex gap-2 p-2 text-gray-400"
-              
-            >
-              {" "}
-              <span>
+          <div className="flex flex-col gap-2 ">
+            {instagramLinks.map((link, index)=>(
+              <Link
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer" 
+                className="no-underline flex gap-2 p-2 text-gray-400"
+              >
                 <Instagram />
-              </span>{" "}
-              @FutbolFem
-            </Link>
-            <Link
-              href={"https://www.instagram.com/futbolfemhaedo/"}
-              target="blank"
-              className="no-underline  flex gap-2 p-2 text-gray-400"
-            >
-              {" "}
-              <span>
-                <Instagram />
-              </span>{" "}
-              FutbolFem-Haedo
-            </Link>
-            <Link
-              href={"https://www.instagram.com/futbolfemituzaingo/"}
-              target="blank"
-              className="no-underline  flex gap-2 p-2 text-gray-400"
-            >
-              <span>
-                <Instagram />
-              </span>{" "}
-              FutbolFem-Ituzaingo
-            </Link>
-            <Link
-              href={"https://www.instagram.com/futbolfemramosmejia/"}
-              target="blank"
-              className="no-underline  flex gap-2 p-2 text-gray-400"
-            >
-              {" "}
-              <span>
-                <Instagram />
-              </span>
-              FutbolFem- Ramos
-            </Link>
-            <Link
-              href={"https://www.instagram.com/futbolfempalomar/"}
-              target="blank"
-              className="no-underline  flex gap-2 p-2 text-gray-400"
-            >
-              {" "}
-              <span>
-                <Instagram />
-              </span>{" "}
-              FutbolFem-Palomar
-            </Link>
+                {link.label}
+              </Link>
+           
+            ))}
+            
           </div>
-          <div className='flex flex-column gap-2 hover:scale-110 transition-all duration-300 ease-in-out '>
+          <div className='flex flex-col gap-2 hover:scale-110 transition-all duration-300 ease-in-out '>
             <ArrowCircleUpIcon
               className="text-5xl cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             />
-            <p>subir</p>
+            <p>Subir</p>
           </div>
         </div>
         </>)
