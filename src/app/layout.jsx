@@ -31,7 +31,7 @@ export const metadata = {
     siteName: "FutbolFem",
     images: [
       {
-        url: "/logo.png", // desde carpeta public
+        url: "https://futbolfem.vercel.app/logo.png",
         width: 800,
         height: 800,
         alt: "Logo FutbolFem - Fútbol Femenino",
