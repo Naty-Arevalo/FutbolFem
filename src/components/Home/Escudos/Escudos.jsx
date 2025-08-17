@@ -16,7 +16,7 @@ const Escudos = () => {
         
           <Link 
           key={i}
-          href="./futbolfemhaedo"  
+          href={shield.link}  
           className='relative w-full max-w-[300px] aspect-square  rounded-3xl overflow-hidden' 
           >
             <Image

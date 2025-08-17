@@ -9,12 +9,14 @@
         "ver_mapa": true,
         "dias_y_horarios": [
           {
-            "dia": "Miércoles",
-            "horario": "18:00 - 19:00"
+            "dia": "Martes",
+            "horario_juveniles": "18:00 - 19:00",
+            "horario_adultas": "19:00 - 20:00"
           },
           {
-            "dia": "Viernes",
-            "horario": "19:00 - 20:00"
+            "dia": "Jueves",
+            "horario_juveniles": "18:00 - 19:00",
+            "horario_adultas": "19:00 - 20:00"
           }
         ],
         "categorias": [
@@ -47,11 +49,11 @@
         "dias_y_horarios": [
           {
             "dia": "Lunes",
-            "horario": "18:00 - 19:00"
+            "horario": "20:00 - 21:00"
           },
           {
             "dia": "Viernes",
-            "horario": "19:00 - 20:00"
+            "horario": "20:00 - 21:00"
           }
         ],
         "categorias": [
@@ -71,7 +73,7 @@
         "ver_mapa": true,
         "dias_y_horarios": [
           {
-            "dia": "Lunes",
+            "dia": "Miércoles",
             "horario": "18:00 - 19:00"
           },
           {
@@ -96,12 +98,12 @@
         "ver_mapa": true,
         "dias_y_horarios": [
           {
-            "dia": "Lunes",
+            "dia": "Martes",
             "horario": "18:00 - 19:00"
           },
           {
             "dia": "Viernes",
-            "horario": "19:00 - 20:00"
+            "horario": "18:00 - 19:00"
           }
         ],
         "categorias": [

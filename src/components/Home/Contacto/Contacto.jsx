@@ -16,12 +16,12 @@ const Contacto = () => {
 
 
   return (<>
-    <h1 className="font-bold text-3xl text-white">Contactanos</h1>
+    <h1 className="font-bold text-3xl text-white mb-6 mt-3">Contactanos</h1>
         <p className="text-gray-200/60 text-xl mb-4">
           Para más información sobre nuestras clases, horarios y ubicaciones, no
           dudes en contactarnos. <br />
           Seguinos en nuestras redes sociales para estar al tanto de todas las
-          novedades y eventos
+          novedades y eventos.
         </p>
         <div className="flex flex-row justify-around items-end gap-4">
           <div className="flex flex-col gap-2 ">

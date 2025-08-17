@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import "./globals.css";
 import Footer from "@/components/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
+
 
 
 export const metadata = {
@@ -73,12 +73,9 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-dvh bg-black/90">
-          <div>
+          
             <Navbar />
-          </div>
-          <div>
             <Banner />
-          </div>
           <main>
             {children}
           </main>

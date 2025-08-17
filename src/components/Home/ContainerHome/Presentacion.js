@@ -6,15 +6,15 @@ const Presentacion = () => {
         <h2 className="text-white text-3xl xl:text-4xl p-3 text-center">
           Bienvenidas a Nuestra Comunidad de Futbol Femenino!
         </h2>
-        <p className="text-gray-200/60 text-xl text-left md:text-left">
+        <p className="text-gray-200/60 text-xl text-left mt-3 md:text-left">
           En nuestra escuela de fútbol femenino, ofrecemos un espacio de
           aprendizaje, crecimiento y disfrute para todas aquellas que deseen
           mejorar su juego y formar parte de una comunidad apasionada por el
           deporte. Creemos en el potencial de cada jugadora y en la importancia
           del trabajo en equipo para alcanzar nuevas metas.
         </p>
-        <h3 className="text-gray-100 font-semibold text-2xl pt-2 text-center">Que Aprenderás?</h3>
-        <p className="text-gray-200/60 text-md text-base-7">
+        <h3 className="text-gray-100 font-semibold text-2xl pt-2 text-center mt-6 mb-3 md:text-left md:ml-10">Que Aprenderás?</h3>
+        <p className="text-gray-200/60 text-md text-base-7 leading-relaxed">
           <strong className='font-semibold text-lg underline text-gray-100/80'>Táctica:</strong> Posicionamiento en la cancha, estrategias de juego y toma de
           decisiones en equipo. <br />
           <strong className='font-semibold text-lg underline text-gray-100/80'>Técnica Individual:</strong> Pases, recepción, conducción, remates y control
@@ -24,15 +24,15 @@ const Presentacion = () => {
           <strong className='font-semibold text-lg underline text-gray-100/80'>Preparación Física y Mental:</strong> Ejercicios para mejorar la resistencia,
           velocidad y concentración en el partido.
         </p>
-        <h3 className="text-gray-100 font-semibold text-2xl pt-2 text-center">Como Te Ayuda?</h3>
-        <p className="text-gray-200/60 text-md text-base-7">
+        <h3 className="text-gray-100 font-semibold text-2xl pt-2 text-center mt-6 mb-3 md:text-left md:ml-10">Como Te Ayuda?</h3>
+        <p className="text-gray-200/60 text-md text-base-7 leading-relaxed mb-3">
           Nuestro entrenamiento te permitirá desarrollar habilidades que van más
           allá del campo de juego. No solo mejorarás tu desempeño físico y
           técnico, sino también la confianza en ti misma, el trabajo en equipo y
           la disciplina.
         </p>
-        <p className="text-gray-100/90 text-lg text-base-7 text-left md:text-left">¡Podés ser Parte del Equipo!</p>
-        <p className="text-gray-200/60 text-md text-base-7 text-left md:text-left">
+        <p className="text-gray-100/90 text-lg text-base-7 text-left md:text-left mb-3 leading-relaxed">¡Podés ser Parte del Equipo!</p>
+        <p className="text-gray-200/60 text-md text-base-7 text-left md:text-left leading-relaxed mb-6">
           Sabemos que cada jugadora tiene su propio ritmo de aprendizaje, por
           eso todas tienen la oportunidad de formar parte de un equipo para
           competiciones futuras. Para lograrlo, solo hace falta compromiso en

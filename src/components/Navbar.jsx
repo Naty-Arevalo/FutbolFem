@@ -26,16 +26,20 @@ export default function Navbar() {
   //el pathname es la ruta de la pagina que estamos
 
   return (
-    <nav className="navbar">
-      <div className="navbar-bloque">
+    <nav className="bg-neutral-950 p-2 flex justify-between items-center text-white">
+      <div className="flex items-center justify-between w-full relative px-2">
         <Link href="/">
-          <Image src="/favicon.png" width={120} height={120} alt="Logo"
-          className=" hover:scale-110 transition-all duration-300 ease-in-out ml-4" />
+          <Image src="/favicon.png" 
+            width={0} 
+            height={0} 
+            sizes="100vw" 
+            alt="Logo"
+            className="w-20 md:w-28 lg:w-32 h-auto hover:scale-110 transition-all duration-300 ease-in-out ml-4" />
         </Link>
 
 {/*Boton de menu Hambuerguesa*/}
         <button 
-        className="menu-toggle" 
+        className="block md:hidden  bg-neutral-950 text-white cursor-pointer border-2 border-solid border-white rounded-md px-2 py-1" 
         onClick={()=> setOpen(!open)
         }         
           >
@@ -43,21 +47,19 @@ export default function Navbar() {
         </button>
 
 {/*Menu*/}
-        <div className= {`bloque-links ${open ? 'open' : ''} fixed top-10 left-0   z-50 isolation-isolate md:static md:w-auto`}>
-          <ul className="bloque-links-ul">
+        <div className= {` ${open ? 'flex' : 'hidden'} flex-col absolute top-20 right-0 w-full bg-neutral-950 p-3 border border-pink-400 rounded-2xl z-50 md:static md:flex md:flex-row md:w-auto md:border-0 md:bg-transparent md:top-auto md:right-auto`}>
+          <ul className="flex flex-col gap-4 md:flex-row md:gap-8 md:items-center ">
             {linkNavbar.map ((link, index)=>(
               <li className="navbar-enlaces" key={index}>
                 <Link   
                   href={link.link} 
                   onClick={()=>setOpen(false)}
-                  className={`${pathname === link.link ? 'bg-gray-500/70 text-neutral-400 pr-6 py-2 pl-2 rounded-lg'  : 'text-white hover:font-bold hover:transition-all duration-300 ease-in'}`}
+                  className={`${pathname === link.link ? 'bg-gray-500/70 text-neutral-400 pr-6 py-2 pl-2 rounded-lg '  : 'text-white hover:font-bold hover:transition-all duration-300 ease-in'} no-underline  text-xl` }
               >
                 {link.name}
               </Link>
             </li>
             ))}
-            
-           
           </ul>
         </div>
       </div>
