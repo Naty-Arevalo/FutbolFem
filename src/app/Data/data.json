@@ -9,12 +9,12 @@
         "ver_mapa": true,
         "dias_y_horarios": [
           {
-            "dia": "Martes",
+            "dia": "MARTES",
             "horario_juveniles": "18:00 - 19:00",
             "horario_adultas": "19:00 - 20:00"
           },
           {
-            "dia": "Jueves",
+            "dia": "JUEVES",
             "horario_juveniles": "18:00 - 19:00",
             "horario_adultas": "19:00 - 20:00"
           }

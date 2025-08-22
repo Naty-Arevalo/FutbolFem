@@ -26,7 +26,7 @@ export default function Slogan(){
                 ))}
             </div>
             <motion.p
-            className= {`${roboto.className} text-pink-200/80 text-xl md:text-3xl leading-relaxed `}
+            className= {`${roboto.className} text-pink-200/80 text-2xl md:text-3xl leading-relaxed `}
             initial= {{ opacity:0 }}
             animate= {{ opacity:1 }}
             transition= {{ duration:1, delay: palabras.length * 0.4 }}
