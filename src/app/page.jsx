@@ -8,17 +8,12 @@ export default function Home() {
   return (
     <>
       <section className="flex flex-col justify-center items-center p-2 my-10">
-          <Slogan/>
-        
+          <Slogan/>       
       </section>
-
         <Escudos/>
-
-
       <section id="quienes-somos">
         <Presentacion/>
       </section>
-
       <section
         className="py-4  border-t-2 w-3/4 mx-auto border-white md:text-center "
         id="contacto"

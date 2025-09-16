@@ -19,14 +19,13 @@ const Presentacion = () => {
           decisiones en equipo. <br />
           <strong className='font-semibold text-lg underline text-gray-100/80'>Técnica Individual:</strong> Pases, recepción, conducción, remates y control
           del balón. <br />
-          <strong className='font-semibold text-lg underline text-gray-100/80'>Conceptos Ofensivos y Defensivos:</strong> Pases, recepción, conducción,
-          remates y control del balón. <br />
+          <strong className='font-semibold text-lg underline text-gray-100/80'>Conceptos Ofensivos y Defensivos:</strong> Ataque -Defensa -Desmarque- Toma de decisiones- Finalización de jugada. <br />
           <strong className='font-semibold text-lg underline text-gray-100/80'>Preparación Física y Mental:</strong> Ejercicios para mejorar la resistencia,
           velocidad y concentración en el partido.
         </p>
         <h3 className="text-gray-100 font-semibold text-2xl pt-2 text-center mt-6 mb-3 md:text-left md:ml-10">Como Te Ayuda?</h3>
         <p className="text-gray-200/60 text-md text-base-7 leading-relaxed mb-3">
-          Nuestro entrenamiento te permitirá desarrollar habilidades que van más
+          Nuestros entrenamientos te permitirán desarrollar habilidades que van más
           allá del campo de juego. No solo mejorarás tu desempeño físico y
           técnico, sino también la confianza en ti misma, el trabajo en equipo y
           la disciplina.

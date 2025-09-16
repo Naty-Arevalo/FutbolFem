@@ -16,6 +16,7 @@ export default function Navbar() {
     {link: "/futbolfempalomar" ,name:"Palomar"},
     {link: "/futbolfemramos" ,name:"Ramos"},
     {link: "/futbol7" ,name:"Futbol 7"},
+    {link: "/futsal" ,name:"Futsal"},
     {link: "/#contacto" ,name:"Contacto"},
   ]
 

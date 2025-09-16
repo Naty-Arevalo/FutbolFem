@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import "./globals.css";
 import Footer from "@/components/Footer";
+import WhatsAppIcon from "@/components/WhatsAppIcon/WhatsAppIcon";
 
 
 
@@ -83,6 +84,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </div>
         </div>
+        <WhatsAppIcon/>
       </body>
     </html>
     

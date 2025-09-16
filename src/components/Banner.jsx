@@ -10,7 +10,7 @@ export default function Banner() {
       }}
     >
       <p className="text-white text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-medium  ">
-        Futbol Fem <br /> Escuelas de <br />Futbol Femenino
+        Futbol Fem <br /> Escuelas deportivas <br />Futbol para todas
       </p>
     </div>
   );

@@ -3,7 +3,7 @@
         "club": "Futbol Fem Haedo",
         "imagen": "/Escudo_Haedo_transparencia.png",
         "ubicacion": {
-          "nombre": "La Roma",
+          "nombre": "La Roma F5",
           "direccion": "Av. Rivadavia 16936"
         },
         "ver_mapa": true,
@@ -11,12 +11,12 @@
           {
             "dia": "MARTES",
             "horario_juveniles": "18:00 - 19:00",
-            "horario_adultas": "19:00 - 20:00"
+            "horario_adultas": "19:00 - 21:00"
           },
           {
             "dia": "JUEVES",
             "horario_juveniles": "18:00 - 19:00",
-            "horario_adultas": "19:00 - 20:00"
+            "horario_adultas": "19:00 - 21:00"
           }
         ],
         "categorias": [
@@ -52,7 +52,7 @@
             "horario": "20:00 - 21:00"
           },
           {
-            "dia": "Viernes",
+            "dia": "Miércoles",
             "horario": "20:00 - 21:00"
           }
         ],
