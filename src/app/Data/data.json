@@ -10,30 +10,30 @@
         "dias_y_horarios": [
           {
             "dia": "MARTES",
-            "horario_juveniles": "18:00 - 19:00",
-            "horario_adultas": "19:00 - 21:00"
+            "horario_juveniles": "18:00hs - 19:00hs",
+            "horario_adultas": "19:00hs - 21:00hs"
           },
           {
             "dia": "JUEVES",
-            "horario_juveniles": "18:00 - 19:00",
-            "horario_adultas": "19:00 - 21:00"
+            "horario_juveniles": "18:00hs - 19:00hs",
+            "horario_adultas": "19:00hs - 21:00hs"
           }
         ],
         "categorias": [
           {
-            "nombre": "Iniciación al deporte",
+            "nombre": "Infantiles",
             "edades": "3 a 6 años"
           },
           {
-            "nombre": "Fútbol infantil",
+            "nombre": "Juveniles Grupo 1",
             "edades": "7 a 12 años"
           },
           {
-            "nombre": "Fútbol juveniles",
+            "nombre": "Infantiles Grupo 2",
             "edades": "13 a 17 años"
           },
           {
-            "nombre": "+17 / Adultas",
+            "nombre": "Adultas: Grupo 1, Grupo 2",
             "edades": "17 años en adelante"
           }
         ]
@@ -49,11 +49,11 @@
         "dias_y_horarios": [
           {
             "dia": "Lunes",
-            "horario": "20:00 - 21:00"
+            "horario": "20:00hs - 21:00hs"
           },
           {
             "dia": "Miércoles",
-            "horario": "20:00 - 21:00"
+            "horario": "20:00hs - 21:00hs"
           }
         ],
         "categorias": [
@@ -68,17 +68,17 @@
         "imagen": "/Escudo_Palomar_transparencia.png",
         "ubicacion": {
           "nombre": "La Estación Futbol",
-          "direccion": "Ciudad Jardín, Frente a la Estación El Palomar"
+          "direccion": "Frente a la Estación El Palomar"
         },
         "ver_mapa": true,
         "dias_y_horarios": [
           {
             "dia": "Miércoles",
-            "horario": "18:00 - 19:00"
+            "horario": "18:00hs - 19:00hs"
           },
           {
             "dia": "Viernes",
-            "horario": "19:00 - 20:00"
+            "horario": "19:00hs - 20:00hs"
           }
         ],
         "categorias": [
@@ -99,11 +99,11 @@
         "dias_y_horarios": [
           {
             "dia": "Martes",
-            "horario": "18:00 - 19:00"
+            "horario": "18:00hs - 19:00hs"
           },
           {
             "dia": "Viernes",
-            "horario": "18:00 - 19:00"
+            "horario": "18:00hs - 19:00hs"
           }
         ],
         "categorias": [

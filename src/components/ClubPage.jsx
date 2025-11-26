@@ -1,10 +1,11 @@
-
 import data from '../app/Data/data.json'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image';
 import clubStyles from "@/app/Utilities/clubStyles"
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 
 
 const ClubPage = ( { clubName }) => {
@@ -18,44 +19,50 @@ const ClubPage = ( { clubName }) => {
 
   return (
 //   <>
-    <div className='flex justify-center items-center flex-col'>
-        <div className='w-3/4 bg-gray-600/50  flex items-center justify-center flex-col my-5 p-4 rounded-xl md:flex-row md:justify-between md:w-11/12 md:p-8'>
+    <div className='flex justify-center items-center flex-col '>
+        <div className='w-4/5 bg-gray-600/50  flex justify-center flex-col my-5 py-4 px-2 rounded-xl md:flex-row md:justify-between md:w-11/12 md:py-8 md:gap-4 md:px-1'>
             {/*Imagen */}
-            <div>
+            <div className="flex justify-center items-center">
                 <Image 
                     src={club.imagen} 
                     alt={clubName} 
                     width={150} 
                     height={150}
                     style={{filter: shadow }} 
+                    className='lg:w-48'
                     />
             </div>
             {/*Dirección */}
             <div className='mt-4'>
-                <h1 className={`${tituloColor} text-3xl md:text-4xl lg:text-5xl font-bold transition-colors duration-300`}>{club.club}</h1>
-                    <p className='text-neutral-400 text-2xl md:text-xl lg:text-3xl mt-4 font-semibold'> Estamos En: {club.ubicacion.nombre} <br/>
-                        <span className=' inline-block transform hover:rotate-12 transition-transform duration-300'>
-                            <ArrowOutwardIcon className={`${iconColor} size-8 mr-2`}/>
-                        </span>
-                        {club.ubicacion.direccion}
-                    </p>
+                <h1 className={`${tituloColor} text-3xl text-center lg:text-4xl font-bold transition-colors duration-300`}>{club.club}</h1>
+                <div className='flex items-center gap-2 mt-3'>
+                    <div>
+                        <span><LocationOnIcon className={`${iconColor} size-12 md:size-14`}/></span>
+                    </div>
+                    <div>
+                        <p className={`${tituloColor} text-2xl font-semibold md:text-3xl `}>{club.ubicacion.nombre}</p>
+                        <p className={`${tituloColor} text-2xl italic md:text-3xl `}>{club.ubicacion.direccion}</p>
+                    </div>
+                </div>
+                
             </div>
+
             {/*Horarios */}
-            <div className='text-neutral-400 mt-4 '>
-                <h2 className='text-2xl md:text-3xl lg:text-4xl font-semibold '>
-                    <span className='inline-block'>
-                        <CalendarMonthIcon className={`${iconColor} size-8 mr-2` }/>
-                    </span>
-                    Dias y Horarios 
-                </h2>
+            <div className='text-neutral-400 mt-4 '>  
+                    <div className='flex gap-2  mt-4 '>
+                        <span className='inline-block'>
+                            <CalendarMonthIcon className={`${iconColor} size-7 mr-2 md:size-10` }/>
+                        </span>
+                        <p className='text-3xl  font-semibold md:mb-6'>Dias y Horarios</p>
+                    </div>
                 <ul className='space-y-2 mt-2'>
                 {club.dias_y_horarios.map(({ dia, horario, horario_juveniles, horario_adultas} , index) =>{
                 return(
-                    <li key={index} className='text-lg md:text-xl lg:text-2xl italic'>
-                        {dia} :{""}
+                    <li key={index} className='text-lg italic'>
+                        {dia} : <br/>{""}
                         {horario_juveniles && horario_adultas ? (
                         <>
-                            {horario_juveniles} (Juveniles) <br/> 
+                            {horario_juveniles} (Infanto-Juvenil) <br/> 
                             {horario_adultas} (Adultas)
                         </>
                         ):(
@@ -68,17 +75,22 @@ const ClubPage = ( { clubName }) => {
             </div>
             {/*Categorías */}
             <div className='text-neutral-400 mt-4'>
-                <h2 className='text-2xl font-semibold ml-4'>Categorías:</h2>
+                <div className='flex gap-2  mt-4 '>
+                    <span className='inline-block'>
+                        <ContentPasteIcon className={`${iconColor} size-7 mr-2 md:size-10` }/>
+                    </span>
+                    <p className='text-3xl  font-semibold md:mb-6'>Categorías:</p>
+                </div>
                     <ul className='space-y-2 mt-2 list-disc list-outside pl-6'>
                         {club.categorias.map((categoria, index) => (
-                        <li key={index} className='text-lg md:text-xl lg:text-2xl '>{categoria.nombre}: <span className='italic'>{categoria.edades}</span> </li>
+                        <li key={index} className='text-lg md:text-xl md:ml-8 '>{categoria.nombre}: <span className='italic'>{categoria.edades}</span> </li>
                         ))}
                     </ul>
             </div>
             
         </div>
         {/*Whatsapp */}
-        <div className='bg-gray-600/80 flex gap-4 p-4 rounded-lg mb-4'>
+        {/* <div className='bg-gray-600/80 flex gap-4 p-4 rounded-lg mb-4'>
             <a 
                 href={`https://wa.me/542262559339?text=Hola%20quiero%20consultar%20por%20${club.club}`}
                 target='_blank'
@@ -88,7 +100,7 @@ const ClubPage = ( { clubName }) => {
                 < WhatsAppIcon fontSize='large'/> No dudes en contactarme
             </a>
             
-        </div>
+        </div> */}
     </div>
 
 

@@ -55,7 +55,7 @@ export default function Navbar() {
                 <Link   
                   href={link.link} 
                   onClick={()=>setOpen(false)}
-                  className={`${pathname === link.link ? 'bg-gray-500/70 text-neutral-400 pr-6 py-2 pl-2 rounded-lg '  : 'text-white hover:font-bold hover:transition-all duration-300 ease-in'} no-underline  text-xl` }
+                  className={`${pathname === link.link ? 'text-white pr-6 py-2 pl-2 rounded-lg '  : 'text-neutral-500 hover:font-bold hover:transition-all duration-300 ease-in'} no-underline  text-xl md:text-2xl` }
               >
                 {link.name}
               </Link>

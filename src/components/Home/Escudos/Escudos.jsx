@@ -10,7 +10,7 @@ const Escudos = () => {
     {link: "./futbolfempalomar", img:"/Escudo_Palomar_transparencia.png", alt: "escudo palomar" },
     {link: "./futbolfemramos", img:"/Escudo_Ramos_transparencia.png", alt: "escudo ramos" },
     {link: "./futbol7", img:"/Escudo_f7_transparencia.png", alt: "escudo futbol7" },
-    {link: "./futsal", img:"/Futsal_transparencia.1.png", alt: "escudo futsal" }
+    {link: "./futsal", img:"/Futsal-transparente.png", alt: "escudo futsal" }
   ]
   return (<>
     <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 sm:gap-4 place-items-center mx-4 md:my-6'>

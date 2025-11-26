@@ -45,7 +45,7 @@ const page =()=> {
         transition={{ delay: texto.length * 0.1 + 0.5, duration: 0.6 }}
       >
         <Image
-          src="/futsal_transparecia.png" 
+          src="/futsal-transparente.png" 
           alt="Escudo"
           width={300}
           height={300}
