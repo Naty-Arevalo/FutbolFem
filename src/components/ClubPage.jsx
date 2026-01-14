@@ -89,18 +89,47 @@ const ClubPage = ( { clubName }) => {
             </div>
             
         </div>
-        {/*Whatsapp */}
-        {/* <div className='bg-gray-600/80 flex gap-4 p-4 rounded-lg mb-4'>
-            <a 
-                href={`https://wa.me/542262559339?text=Hola%20quiero%20consultar%20por%20${club.club}`}
-                target='_blank'
-                rel="noopener noreferrer"
-                className='cursor-pointer text-white text-xl'
+        {/*Galeria de Imagenes */}
+        {/* <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-3/4 mb-5 lg:w-full lg:px-10'>
+           {club.galeriaImagenes.map((img,i) => (
+            <div 
+                key={i} 
+                className='w-full overflow-hidden rounded-lg'
+                data-aos= "fade-up"
+                data-aos-delay={i * 100}
                 >
-                < WhatsAppIcon fontSize='large'/> No dudes en contactarme
-            </a>
+                <Image
+                src={img}
+                alt={`foto ${i}`}
+                width={500}
+                height={500}
+                className='w-full h-auto object-cover rounded-lg transition-transform duration-300 hover:scale-105'
+                />
+            </div>
+           ))}
             
         </div> */}
+
+        <div className='grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-3/4 mb-5 lg:w-full lg:px-10'>
+            {club.galeriaImagenes.map((img,i) =>(
+                <div
+                    key={i}
+                    data-aos='fade-up'
+                    data-aos-delay={i * 100}
+                    className='relative aspect-[4/3] overflow-hidden rounded-lg'
+                >
+                    <Image
+                        src={img}
+                        alt={`foto ${i}`}
+                        fill
+                        sizes='(max-width: 640px) 100vw,
+                                (max-width: 768px) 50vw,
+                                33vw'
+                        className='object-cover transition-transform duration-300 hover:scale-105'
+                    />
+                </div>
+            ))}
+        </div>
     </div>
 
 

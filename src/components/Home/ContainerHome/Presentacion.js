@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const Presentacion = () => {
@@ -6,6 +7,20 @@ const Presentacion = () => {
         <h2 className="text-white text-3xl xl:text-4xl p-3 text-center">
           Bienvenidas a Nuestra Comunidad de Futbol Femenino!
         </h2>
+
+        {/*imagen de integrantes*/}
+        <div className='relative w-full max-w-5xl mx-auto my-8 aspect-video rounded-lg overflow-hidden shadow-xl'>
+          <Image
+          src='/presentacion-de-4-sedes.jpeg'
+          alt="Integrantes de las 4 sedes"
+          fill
+          className='object-cover sm:object-contain md:object-cover'
+          sizes='(max-width:640) 100vw, (max-width:768px) 90vw, 1200px'
+          loading='lazy'
+          />
+        </div>
+
+
         <p className="text-gray-200/60 text-xl text-left mt-3 md:text-left">
           En nuestra escuela de fútbol femenino, ofrecemos un espacio de
           aprendizaje, crecimiento y disfrute para todas aquellas que deseen

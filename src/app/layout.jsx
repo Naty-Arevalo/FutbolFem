@@ -3,6 +3,7 @@ import Banner from "@/components/Banner";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import WhatsAppIcon from "@/components/WhatsAppIcon/WhatsAppIcon";
+import AosInitializer from "@/components/aosInitializer/aosInitializer";
 
 
 
@@ -73,6 +74,7 @@ export default function RootLayout({ children }) {
           <link rel="icon" href="/favicon-96x96.png" type="image/png" />
       </head>
       <body>
+        <AosInitializer/>
         <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-dvh bg-black/90">
           
             <Navbar />

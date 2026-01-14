@@ -5,7 +5,7 @@
         "ubicacion": {
           "nombre": "La Roma F5",
           "direccion": "Av. Rivadavia 16936"
-        },
+          },
         "ver_mapa": true,
         "dias_y_horarios": [
           {
@@ -36,7 +36,19 @@
             "nombre": "Adultas: Grupo 1, Grupo 2",
             "edades": "17 años en adelante"
           }
-        ]
+        ],
+        "galeriaImagenes":
+        [
+          "/haedo1.jpg",
+          "/haedo2.jpg",
+          "/haedo3.jpg",
+          "/haedo4.jpg",
+          "/haedo5.jpg",
+          "/haedo10.jpg",
+          "/haedo7.jpg",
+          "/haedo11.jpg"
+          
+      ]
     },
     {
         "club": "Futbol Fem Ituzaingó",
@@ -61,7 +73,16 @@
             "nombre": "+17 / Adultas",
             "edades": "17 años en adelante"
           }
-        ]
+        ],
+        "galeriaImagenes":
+        [
+          "/ituza1.jpeg",
+          "/ituza2.jpeg",
+          "/ituza3.jpeg",
+          "/ituza4.jpeg",
+          "/ituza5.jpeg",
+          "/ituza6.jpeg"   
+      ]
     },
     {
         "club": "Futbol Fem Palomar",
@@ -86,8 +107,18 @@
             "nombre": "+17 / Adultas",
             "edades": "17 años en adelante"
           }
-        ]
+        ],
+        "galeriaImagenes":
+        [
+          "/palomar3.jpeg",
+          "/palomar4.jpeg",
+          "/palomar5.jpeg",
+          "/palomar6.jpeg",
+          "/palomar1.jpeg",
+          "/palomar2.jpeg"   
+      ]
     },
+
     {
         "club": "Futbol Fem Ramos Mejía",
         "imagen":"/Escudo_Ramos_transparencia.png",
@@ -111,6 +142,12 @@
             "nombre": "+17 / Adultas",
             "edades": "17 años en adelante"
           }
-        ]
+        ],
+        "galeriaImagenes":
+        [
+          "/ramos1.jpeg",
+          "/ramos2.jpeg",
+          "/ramos3.jpeg"
+      ]
     }
 ]
