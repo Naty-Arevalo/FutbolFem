@@ -3,7 +3,7 @@ import Banner from "@/components/Banner";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import WhatsAppIcon from "@/components/WhatsAppIcon/WhatsAppIcon";
-import AosInitializer from "@/components/aosInitializer/aosInitializer";
+import AosInitializer from "@/components/aosInitializer/AosInitializer";
 
 
 
