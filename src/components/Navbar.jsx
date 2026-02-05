@@ -27,7 +27,7 @@ export default function Navbar() {
   //el pathname es la ruta de la pagina que estamos
 
   return (
-    <nav className="bg-neutral-950 p-2 flex justify-between items-center text-white">
+    <nav className="bg-neutral-950 p-2 flex justify-between items-center text-white fixed top-0 left-0 w-full z-50">
       <div className="flex items-center justify-between w-full relative px-2">
         <Link href="/">
           <Image src="/favicon.png" 
@@ -35,7 +35,7 @@ export default function Navbar() {
             height={0} 
             sizes="100vw" 
             alt="Logo"
-            className="w-20 md:w-28 lg:w-32 h-auto hover:scale-110 transition-all duration-300 ease-in-out ml-4" />
+            className="w-20 md:w-20 md:m-0 lg:w-32 h-auto hover:scale-110 transition-all duration-300 ease-in-out ml-4" />
         </Link>
 
 {/*Boton de menu Hambuerguesa*/}
@@ -49,13 +49,13 @@ export default function Navbar() {
 
 {/*Menu*/}
         <div className= {` ${open ? 'flex' : 'hidden'} flex-col absolute top-20 right-0 w-full bg-neutral-950 p-3 border border-pink-400 rounded-2xl z-50 md:static md:flex md:flex-row md:w-auto md:border-0 md:bg-transparent md:top-auto md:right-auto`}>
-          <ul className="flex flex-col gap-4 md:flex-row md:gap-8 md:items-center ">
+          <ul className="flex flex-col gap-4 md:flex-row md:gap-2 md:items-center lg:gap-6 ">
             {linkNavbar.map ((link, index)=>(
               <li className="navbar-enlaces" key={index}>
                 <Link   
                   href={link.link} 
                   onClick={()=>setOpen(false)}
-                  className={`${pathname === link.link ? 'text-white pr-6 py-2 pl-2 rounded-lg '  : 'text-neutral-500 hover:font-bold hover:transition-all duration-300 ease-in'} no-underline  text-xl md:text-2xl` }
+                  className={`${pathname === link.link ? 'text-white pr-6 py-2 pl-2 rounded-lg '  : 'text-neutral-500 hover:font-bold hover:transition-all duration-300 ease-in'} no-underline  text-xl md:text-lg lg:text-2xl` }
               >
                 {link.name}
               </Link>

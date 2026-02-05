@@ -1,10 +1,8 @@
 import data from '../app/Data/data.json'
-import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image';
 import clubStyles from "@/app/Utilities/clubStyles"
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import ContentPasteIcon from '@mui/icons-material/ContentPaste';
 
 
@@ -20,7 +18,7 @@ const ClubPage = ( { clubName }) => {
   return (
 //   <>
     <div className='flex justify-center items-center flex-col '>
-        <div className='w-4/5 bg-gray-600/50  flex justify-center flex-col my-5 py-4 px-2 rounded-xl md:flex-row md:justify-between md:w-11/12 md:py-8 md:gap-4 md:px-1'>
+        <div className='w-4/5 md:w-11/12 bg-gray-600/50  flex justify-center flex-col my-5 py-4 px-2 rounded-xl md:flex-row md:justify-between md:mx-1 lg:w-11/12 lg:py-8  md:py-4 lg:gap-4 lg:px-1'>
             {/*Imagen */}
             <div className="flex justify-center items-center">
                 <Image 
@@ -34,14 +32,14 @@ const ClubPage = ( { clubName }) => {
             </div>
             {/*Dirección */}
             <div className='mt-4'>
-                <h1 className={`${tituloColor} text-3xl text-center lg:text-4xl font-bold transition-colors duration-300`}>{club.club}</h1>
+                <h1 className={`${tituloColor} text-3xl text-center md:text-xl lg:text-4xl font-bold `}>{club.club}</h1>
                 <div className='flex items-center gap-2 mt-3'>
                     <div>
-                        <span><LocationOnIcon className={`${iconColor} size-12 md:size-14`}/></span>
+                        <span><LocationOnIcon className={`${iconColor} size-12 md:size-10 lg:size-14`}/></span>
                     </div>
                     <div>
-                        <p className={`${tituloColor} text-2xl font-semibold md:text-3xl `}>{club.ubicacion.nombre}</p>
-                        <p className={`${tituloColor} text-2xl italic md:text-3xl `}>{club.ubicacion.direccion}</p>
+                        <p className={`${tituloColor} text-2xl md:text-lg font-semibold lg:text-3xl `}>{club.ubicacion.nombre}</p>
+                        <p className={`${tituloColor} text-2xl md:text-lg italic lg:text-3xl `}>{club.ubicacion.direccion}</p>
                     </div>
                 </div>
                 
@@ -51,14 +49,14 @@ const ClubPage = ( { clubName }) => {
             <div className='text-neutral-400 mt-4 '>  
                     <div className='flex gap-2  mt-4 '>
                         <span className='inline-block'>
-                            <CalendarMonthIcon className={`${iconColor} size-7 mr-2 md:size-10` }/>
+                            <CalendarMonthIcon className={`${iconColor} size-7 mr-2 lg:size-10 md:size:8` }/>
                         </span>
-                        <p className='text-3xl  font-semibold md:mb-6'>Dias y Horarios</p>
+                        <p className='text-3xl md:text-xl lg:text-3xl font-semibold lg:mb-6'>Dias y Horarios</p>
                     </div>
-                <ul className='space-y-2 mt-2'>
+                <ul className='space-y-2 mt-2 md:mt-1'>
                 {club.dias_y_horarios.map(({ dia, horario, horario_juveniles, horario_adultas} , index) =>{
                 return(
-                    <li key={index} className='text-lg italic'>
+                    <li key={index} className='text-lg italic md:text-sm lg:text-xl'>
                         {dia} : <br/>{""}
                         {horario_juveniles && horario_adultas ? (
                         <>
@@ -77,13 +75,13 @@ const ClubPage = ( { clubName }) => {
             <div className='text-neutral-400 mt-4'>
                 <div className='flex gap-2  mt-4 '>
                     <span className='inline-block'>
-                        <ContentPasteIcon className={`${iconColor} size-7 mr-2 md:size-10` }/>
+                        <ContentPasteIcon className={`${iconColor} size-7 mr-2 lg:size-10 md:size:5` }/>
                     </span>
-                    <p className='text-3xl  font-semibold md:mb-6'>Categorías:</p>
+                    <p className='text-3xl md:text-xl lg:text-3xl font-semibold lg:mb-6'>Categorías:</p>
                 </div>
                     <ul className='space-y-2 mt-2 list-disc list-outside pl-6'>
                         {club.categorias.map((categoria, index) => (
-                        <li key={index} className='text-lg md:text-xl md:ml-8 '>{categoria.nombre}: <span className='italic'>{categoria.edades}</span> </li>
+                        <li key={index} className='text-lg lg:text-xl md:text-sm lg:ml-8 '>{categoria.nombre}: <span className='italic'>{categoria.edades}</span> </li>
                         ))}
                     </ul>
             </div>

@@ -13,7 +13,7 @@ const Escudos = () => {
     {link: "./futsal", img:"/futsal-transparente.png", alt: "escudo futsal" }
   ]
   return (<>
-    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 sm:gap-4 place-items-center mx-4 md:my-6'>
+    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3  lg:gap-6 sm:gap-4 place-items-center mx-4 md:my-6'>
       {shields.map((shield, i)=>(
         
           <Link 

@@ -75,11 +75,11 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <AosInitializer/>
-        <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-dvh bg-black/90">
+        <div className="grid grid-rows-[auto_auto_1fr_auto] min-h-dvh bg-black/90 ">
           
-            <Navbar />
+            <Navbar />  
+          <main className="pt-20 lg:pt-28 xl:pt-32 ">
             <Banner />
-          <main>
             {children}
           </main>
           <div>
