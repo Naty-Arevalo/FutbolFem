@@ -71,7 +71,7 @@ const page = () => {
           Fútbol 7
         </h1>
         <div className="flex flex-col xl:flex-row xl:items-center xl:justify-between mt-6 gap-8">
-          <div className="xl:w1/2">
+          <div className="xl:w-1/2">
             <p className="text-gray-200/60 text-xl text-left mt-3 md:text-left md:px-5 xl:text-center xl:max-w-3xl xl:mx-auto">
               Se caracteriza por ser un juego rápido, dinámico y participativo,
               donde la técnica, el ritmo y el trabajo en equipo son
