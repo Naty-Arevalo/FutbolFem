@@ -4,6 +4,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Image from 'next/image';
 import clubStyles from "@/app/Utilities/clubStyles"
 import ContentPasteIcon from '@mui/icons-material/ContentPaste';
+import { buildClubJsonLd, rutaDeSede } from '@/app/Utilities/clubSeo';
 
 
 const ClubPage = ( { clubName }) => {
@@ -14,9 +15,14 @@ const ClubPage = ( { clubName }) => {
     }
     const styles = clubStyles (clubName);
     const {tituloColor, iconColor, shadow} = styles
+    const jsonLd = buildClubJsonLd(club, rutaDeSede(clubName))
 
   return (
-//   <>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div className='flex justify-center items-center flex-col '>
         <div className='w-4/5 md:w-11/12 bg-gray-600/50  flex justify-center flex-col my-5 py-4 px-2 rounded-xl md:flex-row md:justify-between md:mx-1 lg:w-11/12 lg:py-8  md:py-4 lg:gap-4 lg:px-1'>
             {/*Imagen */}
@@ -49,7 +55,7 @@ const ClubPage = ( { clubName }) => {
             <div className='text-neutral-400 mt-4 '>  
                     <div className='flex gap-2  mt-4 '>
                         <span className='inline-block'>
-                            <CalendarMonthIcon className={`${iconColor} size-7 mr-2 lg:size-10 md:size:8` }/>
+                            <CalendarMonthIcon className={`${iconColor} size-7 mr-2 lg:size-10 md:size-8` }/>
                         </span>
                         <p className='text-3xl md:text-xl lg:text-3xl font-semibold lg:mb-6'>Dias y Horarios</p>
                     </div>
@@ -108,7 +114,7 @@ const ClubPage = ( { clubName }) => {
             
         </div> */}
 
-        <div className='grid grid-col-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-3/4 mb-5 lg:w-full lg:px-10'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-3/4 mb-5 lg:w-full lg:px-10'>
             {club.galeriaImagenes.map((img,i) =>(
                 <div
                     key={i}
@@ -129,7 +135,8 @@ const ClubPage = ( { clubName }) => {
             ))}
         </div>
     </div>
-
+    </>
+)
 
   
 
@@ -140,7 +147,6 @@ const ClubPage = ( { clubName }) => {
 
 
 
-)
 
 
 
@@ -190,7 +196,7 @@ const ClubPage = ( { clubName }) => {
         <h2 className='text-2xl font-semibold text-center'>Categorias:</h2>
         <ul className='space-y-2 '>
             {club.categorias.map((categoria, index) => (
-                <li key={index} className='text-white hover:text-gray-300 transition-colors duration-300 text-lg md:text-xl lg:text-2xl '>✔️{categoria.nombre}: {categoria.edades}</li>
+                <li key={index} className='text-white hover:text-gray-300 transition-colors duration-300 text-lg md:text-xl lg:text-2xl '>âœ”ï¸{categoria.nombre}: {categoria.edades}</li>
             ))}
         </ul>
     </div>
