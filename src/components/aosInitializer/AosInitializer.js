@@ -8,9 +8,11 @@ const AosInitializer = () => {
 
     useEffect(()=>{
         AOS.init({
-            duration:500, 
+            duration:500,
             once:true,
-            // disable:false  //fuerza activacion en mobile
+            disable: () =>
+                typeof window !== "undefined" &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches,
         })
     },[])
   return null

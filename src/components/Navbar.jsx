@@ -5,7 +5,7 @@ import Image from "next/image";
 import './navbar.css'
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import CloseIcon from '@mui/icons-material/Close';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
@@ -23,6 +23,14 @@ export default function Navbar() {
 
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const cerrarConEscape = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", cerrarConEscape);
+    return () => window.removeEventListener("keydown", cerrarConEscape);
+  }, []);
   //el usePathename es para saber en que pagina estamos y cambiar el color del link activo
   //el pathname es la ruta de la pagina que estamos
 
@@ -39,16 +47,19 @@ export default function Navbar() {
         </Link>
 
 {/*Boton de menu Hambuerguesa*/}
-        <button 
-        className="block md:hidden  bg-neutral-950 text-white cursor-pointer border-2 border-solid border-white rounded-md px-2 py-1" 
+        <button
+        className="block md:hidden  bg-neutral-950 text-white cursor-pointer border-2 border-solid border-white rounded-md px-2 py-1"
         onClick={()=> setOpen(!open)
-        }         
+        }
+        aria-expanded={open}
+        aria-controls="menu-navegacion"
+        aria-label={open ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
           >
           {open ? <CloseIcon fontSize="large"/> : <DehazeIcon fontSize="large" />}
         </button>
 
 {/*Menu*/}
-        <div className= {` ${open ? 'flex' : 'hidden'} flex-col absolute top-20 right-0 w-full bg-neutral-950 p-3 border border-pink-400 rounded-2xl z-50 md:static md:flex md:flex-row md:w-auto md:border-0 md:bg-transparent md:top-auto md:right-auto`}>
+        <div id="menu-navegacion" className= {` ${open ? 'flex' : 'hidden'} flex-col absolute top-20 right-0 w-full bg-neutral-950 p-3 border border-pink-400 rounded-2xl z-50 md:static md:flex md:flex-row md:w-auto md:border-0 md:bg-transparent md:top-auto md:right-auto`}>
           <ul className="flex flex-col gap-4 md:flex-row md:gap-2 md:items-center lg:gap-6 ">
             {linkNavbar.map ((link, index)=>(
               <li className="navbar-enlaces" key={index}>

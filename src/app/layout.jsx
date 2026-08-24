@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import WhatsAppIcon from "@/components/WhatsAppIcon/WhatsAppIcon";
 import AosInitializer from "@/components/aosInitializer/AosInitializer";
+import MotionConfigProvider from "@/components/MotionConfigProvider";
 
 
 
@@ -80,7 +81,9 @@ export default function RootLayout({ children }) {
             <Navbar />  
           <main className="pt-20 lg:pt-28 xl:pt-32 ">
             <Banner />
-            {children}
+            <MotionConfigProvider>
+              {children}
+            </MotionConfigProvider>
           </main>
           <div>
             <Footer />
