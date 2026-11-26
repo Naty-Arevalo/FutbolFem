@@ -7,6 +7,7 @@ const WhatsAppIcon = () => {
         href="https://wa.me/5491155618465"
         target='_blank'
         rel='noopener noreferrer'
+        aria-label="Contactar por WhatsApp"
         className='fixed bottom-5 right-5 w-14 h-14 bg-green-500 rounded-full shadow-lg flex items-center justify-center text-white text-3xl hover:scale-110 transition-transform'
     >
         <svg

@@ -1,81 +1,247 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import './navbar.css'
-import DehazeIcon from '@mui/icons-material/Dehaze';
-import CloseIcon from '@mui/icons-material/Close';
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import "./navbar.css";
+import DehazeIcon from "@mui/icons-material/Dehaze";
+import CloseIcon from "@mui/icons-material/Close";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
+const enlaces = [
+  { etiqueta: "Inicio", href: "/" },
+  { etiqueta: "Quiénes somos", href: "/#quienes-somos" },
+  {
+    etiqueta: "Sedes",
+    items: [
+      { etiqueta: "Haedo", href: "/futbolfemhaedo" },
+      { etiqueta: "Ituzaingó", href: "/futbolfemituza" },
+      { etiqueta: "Palomar", href: "/futbolfempalomar" },
+      { etiqueta: "Ramos Mejía", href: "/futbolfemramos" },
+    ],
+  },
+  {
+    etiqueta: "Disciplinas",
+    items: [
+      { etiqueta: "Fútbol 7", href: "/futbol7" },
+      { etiqueta: "Futsal", href: "/futsal" },
+    ],
+  },
+  { etiqueta: "Contacto", href: "/#contacto" },
+];
 
 export default function Navbar() {
-  const linkNavbar = [
-    {link: "/#quienes-somos" ,name:"Quienes Somos"},
-    {link: "/futbolfemhaedo" ,name:"Haedo"},
-    {link: "/futbolfemituza" ,name:"Ituzaingó"},
-    {link: "/futbolfempalomar" ,name:"Palomar"},
-    {link: "/futbolfemramos" ,name:"Ramos"},
-    {link: "/futbol7" ,name:"Futbol 7"},
-    {link: "/futsal" ,name:"Futsal"},
-    {link: "/#contacto" ,name:"Contacto"},
-  ]
-
-
-  const [open, setOpen] = useState(false);
+  const [menuAbierto, setMenuAbierto] = useState(false);
+  const [grupoAbierto, setGrupoAbierto] = useState(null);
+  const navRef = useRef(null);
   const pathname = usePathname();
 
   useEffect(() => {
-    const cerrarConEscape = (e) => {
-      if (e.key === "Escape") setOpen(false);
+    const cerrarConEscape = (event) => {
+      if (event.key === "Escape") {
+        setMenuAbierto(false);
+        setGrupoAbierto(null);
+      }
     };
-    window.addEventListener("keydown", cerrarConEscape);
-    return () => window.removeEventListener("keydown", cerrarConEscape);
+
+    const cerrarAlClickearFuera = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setMenuAbierto(false);
+        setGrupoAbierto(null);
+      }
+    };
+
+    document.addEventListener("keydown", cerrarConEscape);
+    document.addEventListener("mousedown", cerrarAlClickearFuera);
+    return () => {
+      document.removeEventListener("keydown", cerrarConEscape);
+      document.removeEventListener("mousedown", cerrarAlClickearFuera);
+    };
   }, []);
-  //el usePathename es para saber en que pagina estamos y cambiar el color del link activo
-  //el pathname es la ruta de la pagina que estamos
+
+  const esActivo = (href) =>
+    !href.includes("#") &&
+    (pathname === href || pathname.startsWith(`${href}/`));
+
+  const grupoActivo = (items) => items.some(({ href }) => esActivo(href));
+
+  const claseEnlace = (activo) =>
+    `rounded-lg px-3 py-2 text-lg transition md:text-base lg:text-lg ${
+      activo
+        ? "bg-white/10 font-bold text-white"
+        : "text-neutral-400 hover:text-white"
+    }`;
+
+  const cerrarTodo = () => {
+    setMenuAbierto(false);
+    setGrupoAbierto(null);
+  };
+
+  const alternarGrupo = (etiqueta) =>
+    setGrupoAbierto((actual) => (actual === etiqueta ? null : etiqueta));
+
+  const idGrupo = (etiqueta, zona) =>
+    `grupo-${etiqueta.toLowerCase()}-${zona}`;
 
   return (
-    <nav className="bg-neutral-950 p-2 flex justify-between items-center text-white fixed top-0 left-0 w-full z-50">
-      <div className="flex items-center justify-between w-full relative px-2">
-        <Link href="/">
-          <Image src="/favicon.png" 
-            width={0} 
-            height={0} 
-            sizes="100vw" 
+    <nav
+      ref={navRef}
+      className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-neutral-950 p-2 text-white shadow-lg shadow-black/40"
+    >
+      <div className="relative flex w-full items-center justify-between px-2 md:px-4">
+        <Link href="/" onClick={cerrarTodo} aria-label="Ir al inicio">
+          <Image
+            src="/favicon.png"
+            width={0}
+            height={0}
+            sizes="100vw"
             alt="Logo"
-            className="w-20 md:w-20 md:m-0 lg:w-32 h-auto hover:scale-110 transition-all duration-300 ease-in-out ml-4" />
+            className="h-auto w-14 transition-transform duration-300 hover:scale-110 md:w-16 lg:w-20"
+          />
         </Link>
 
-{/*Boton de menu Hambuerguesa*/}
         <button
-        className="block md:hidden  bg-neutral-950 text-white cursor-pointer border-2 border-solid border-white rounded-md px-2 py-1"
-        onClick={()=> setOpen(!open)
-        }
-        aria-expanded={open}
-        aria-controls="menu-navegacion"
-        aria-label={open ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
-          >
-          {open ? <CloseIcon fontSize="large"/> : <DehazeIcon fontSize="large" />}
+          type="button"
+          className="flex items-center justify-center rounded-md border-2 border-white px-2 py-1 md:hidden"
+          onClick={() => setMenuAbierto((actual) => !actual)}
+          aria-expanded={menuAbierto}
+          aria-controls="menu-navegacion"
+          aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+        >
+          {menuAbierto ? (
+            <CloseIcon fontSize="large" />
+          ) : (
+            <DehazeIcon fontSize="large" />
+          )}
         </button>
 
-{/*Menu*/}
-        <div id="menu-navegacion" className= {` ${open ? 'flex' : 'hidden'} flex-col absolute top-20 right-0 w-full bg-neutral-950 p-3 border border-pink-400 rounded-2xl z-50 md:static md:flex md:flex-row md:w-auto md:border-0 md:bg-transparent md:top-auto md:right-auto`}>
-          <ul className="flex flex-col gap-4 md:flex-row md:gap-2 md:items-center lg:gap-6 ">
-            {linkNavbar.map ((link, index)=>(
-              <li className="navbar-enlaces" key={index}>
-                <Link   
-                  href={link.link} 
-                  onClick={()=>setOpen(false)}
-                  className={`${pathname === link.link ? 'text-white pr-6 py-2 pl-2 rounded-lg '  : 'text-neutral-500 hover:font-bold hover:transition-all duration-300 ease-in'} no-underline  text-xl md:text-lg lg:text-2xl` }
-              >
-                {link.name}
-              </Link>
-            </li>
-            ))}
+        <ul className="hidden items-center gap-1 md:flex">
+          {enlaces.map((enlace) =>
+            enlace.items ? (
+              <li key={enlace.etiqueta} className="relative">
+                <button
+                  type="button"
+                  onClick={() => alternarGrupo(enlace.etiqueta)}
+                  aria-expanded={grupoAbierto === enlace.etiqueta}
+                  aria-haspopup="true"
+                  aria-controls={idGrupo(enlace.etiqueta, "desktop")}
+                  className={`${claseEnlace(
+                    grupoActivo(enlace.items) || grupoAbierto === enlace.etiqueta
+                  )} inline-flex items-center gap-1`}
+                >
+                  {enlace.etiqueta}
+                  <KeyboardArrowDownIcon
+                    fontSize="small"
+                    className={`transition-transform ${
+                      grupoAbierto === enlace.etiqueta ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {grupoAbierto === enlace.etiqueta && (
+                  <ul
+                    id={idGrupo(enlace.etiqueta, "desktop")}
+                    className="absolute left-0 top-full z-50 mt-2 w-56 rounded-2xl border border-white/10 bg-neutral-900/95 p-2 shadow-2xl backdrop-blur"
+                  >
+                    {enlace.items.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          onClick={cerrarTodo}
+                          className={`block rounded-xl px-4 py-2 text-sm transition ${
+                            esActivo(item.href)
+                              ? "bg-white/10 font-bold text-white"
+                              : "text-neutral-400 hover:bg-white/5 hover:text-white"
+                          }`}
+                        >
+                          {item.etiqueta}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ) : (
+              <li key={enlace.etiqueta}>
+                <Link
+                  href={enlace.href}
+                  onClick={cerrarTodo}
+                  className={claseEnlace(esActivo(enlace.href))}
+                >
+                  {enlace.etiqueta}
+                </Link>
+              </li>
+            )
+          )}
+        </ul>
+
+        <div
+          id="menu-navegacion"
+          className={`${
+            menuAbierto ? "block" : "hidden"
+          } absolute left-0 top-full max-h-[calc(100dvh-5rem)] w-full overflow-y-auto border-t border-white/10 bg-neutral-950 p-4 shadow-2xl md:hidden`}
+        >
+          <ul className="space-y-1">
+            {enlaces.map((enlace) =>
+              enlace.items ? (
+                <li key={enlace.etiqueta}>
+                  <button
+                    type="button"
+                    onClick={() => alternarGrupo(enlace.etiqueta)}
+                    aria-expanded={grupoAbierto === enlace.etiqueta}
+                    aria-controls={idGrupo(enlace.etiqueta, "movil")}
+                    className={`${claseEnlace(
+                      grupoActivo(enlace.items) || grupoAbierto === enlace.etiqueta
+                    )} flex w-full items-center justify-between text-left`}
+                  >
+                    {enlace.etiqueta}
+                    <KeyboardArrowDownIcon
+                      fontSize="small"
+                      className={`transition-transform ${
+                        grupoAbierto === enlace.etiqueta ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  {grupoAbierto === enlace.etiqueta && (
+                    <ul
+                      id={idGrupo(enlace.etiqueta, "movil")}
+                      className="ml-4 mt-1 space-y-1 rounded-xl border-l border-white/10 bg-white/5 p-2 pl-3"
+                    >
+                      {enlace.items.map((item) => (
+                        <li key={item.href}>
+                          <Link
+                            href={item.href}
+                            onClick={cerrarTodo}
+                            className={`block rounded-lg px-3 py-2 text-base transition ${
+                              esActivo(item.href)
+                                ? "bg-white/10 font-bold text-white"
+                                : "text-neutral-400 hover:text-white"
+                            }`}
+                          >
+                            {item.etiqueta}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ) : (
+                <li key={enlace.etiqueta}>
+                  <Link
+                    href={enlace.href}
+                    onClick={cerrarTodo}
+                    className={`${claseEnlace(
+                      esActivo(enlace.href)
+                    )} block`}
+                  >
+                    {enlace.etiqueta}
+                  </Link>
+                </li>
+              )
+            )}
           </ul>
         </div>
       </div>
     </nav>
   );
 }
-//el # en contacto es para que scrolee hacia esa seccion y no que tenga un componente nuevo

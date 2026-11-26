@@ -1,39 +1,93 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import Image from "next/image";
+import Link from "next/link";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
-const Escudos = () => {
+const destinos = [
+  {
+    href: "/futbolfemhaedo",
+    imagen: "/Escudo_Haedo_transparencia.png",
+    nombre: "Haedo",
+    tipo: "Sede",
+  },
+  {
+    href: "/futbolfemituza",
+    imagen: "/Escudo_Ituza_transparencia.png",
+    nombre: "Ituzaingó",
+    tipo: "Sede",
+  },
+  {
+    href: "/futbolfempalomar",
+    imagen: "/Escudo_Palomar_transparencia.png",
+    nombre: "Palomar",
+    tipo: "Sede",
+  },
+  {
+    href: "/futbolfemramos",
+    imagen: "/Escudo_Ramos_transparencia.png",
+    nombre: "Ramos",
+    tipo: "Sede",
+  },
+  {
+    href: "/futbol7",
+    imagen: "/Escudo_f7_transparencia.png",
+    nombre: "Fútbol 7",
+    tipo: "Disciplina",
+  },
+  {
+    href: "/futsal",
+    imagen: "/futsal-transparente.png",
+    nombre: "Futsal",
+    tipo: "Disciplina",
+  },
+];
 
-  const shields = [
-    {link: "./futbolfemhaedo", img:"/Escudo_Haedo_transparencia.png", alt: "escudo haedo" },
-    {link: "./futbolfemituza", img:"/Escudo_Ituza_transparencia.png", alt: "escudo ituza" },
-    {link: "./futbolfempalomar", img:"/Escudo_Palomar_transparencia.png", alt: "escudo palomar" },
-    {link: "./futbolfemramos", img:"/Escudo_Ramos_transparencia.png", alt: "escudo ramos" },
-    {link: "./futbol7", img:"/Escudo_f7_transparencia.png", alt: "escudo futbol7" },
-    {link: "./futsal", img:"/futsal-transparente.png", alt: "escudo futsal" }
-  ]
-  return (<>
-    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3  lg:gap-6 sm:gap-4 place-items-center mx-4 md:my-6'>
-      {shields.map((shield, i)=>(
-        
-          <Link 
-          key={i}
-          href={shield.link}  
-          className='relative w-full max-w-[300px] aspect-square  rounded-3xl overflow-hidden' 
+export default function Escudos() {
+  return (
+    <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <header className="text-center">
+        <span className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400">
+          Nuestros espacios
+        </span>
+        <h2 className="mt-3 text-3xl font-black leading-tight text-white sm:text-4xl">
+          Elegí tu sede
+        </h2>
+        <p className="mx-auto mt-3 max-w-xl text-base leading-7 text-neutral-400">
+          Cuatro sedes y dos disciplinas para encontrar tu lugar en el fútbol
+          femenino.
+        </p>
+      </header>
+
+      <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:gap-6">
+        {destinos.map(({ href, imagen, nombre, tipo }) => (
+          <Link
+            key={href}
+            href={href}
+            className="group flex flex-col items-center rounded-3xl border border-white/10 bg-white/[0.04] p-5 text-center transition hover:-translate-y-1 hover:border-sky-400/40 hover:bg-white/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 sm:p-6"
           >
-            <Image
-              src={shield.img}
-              fill
-              alt={shield.alt}
-              sizes='(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw'
-              className="object-contain p-1 transition delay-200 duration-300 ease-in hover:-translate-y-1 hover:scale-110"
-            style={{filter: "drop-shadow(0px 4px 12px rgba(255, 255, 255, 0.85"}}
-            />
+            <span className="flex size-24 items-center justify-center sm:size-32 lg:size-40">
+              <Image
+                src={imagen}
+                alt={`Escudo de ${nombre}`}
+                width={120}
+                height={120}
+                sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 160px"
+                className="size-full object-contain transition-transform duration-300 group-hover:scale-110"
+                style={{
+                  filter: "drop-shadow(0px 6px 14px rgba(255,255,255,0.25))",
+                }}
+              />
+            </span>
+            <span className="mt-3 text-base font-bold text-white sm:text-lg lg:text-xl">
+              {nombre}
+            </span>
+            <span className="mt-1 text-sm text-neutral-400">{tipo}</span>
+            <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-sky-400">
+              Ver más
+              <ArrowForwardIcon fontSize="inherit" />
+            </span>
           </Link>
-        
-      ))}
+        ))}
+      </div>
     </div>
-  </>)
+  );
 }
-
-export default Escudos

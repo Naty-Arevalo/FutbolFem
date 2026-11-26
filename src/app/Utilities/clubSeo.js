@@ -1,6 +1,6 @@
 import data from "../Data/data.json";
 
-const SITE_URL = "https://futbolfem.vercel.app";
+const SITE_URL = "https://futbol-fem.vercel.app";
 
 const RUTA_POR_SEDE = {
   "Futbol Fem Haedo": "/futbolfemhaedo",

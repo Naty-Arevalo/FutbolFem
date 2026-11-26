@@ -1,5 +1,4 @@
 import Navbar from "@/components/Navbar";
-import Banner from "@/components/Banner";
 import "./globals.css";
 import Footer from "@/components/Footer";
 import WhatsAppIcon from "@/components/WhatsAppIcon/WhatsAppIcon";
@@ -23,18 +22,19 @@ export const metadata = {
     "fútbol amateur femenino",
     "fútbol femenino Argentina",
   ],
-  authors: [{ name: "FutbolFem", url: "https://futbolfem.vercel.app" }],
+  authors: [{ name: "FutbolFem", url: "https://futbol-fem.vercel.app" }],
   creator: "FutbolFem",
-  metadataBase: new URL("https://futbolfem.vercel.app"),
+  metadataBase: new URL("https://futbol-fem.vercel.app"),
+  alternates: { canonical: "/" },
   openGraph: {
     title: "FutbolFem - Fútbol Femenino en Zona Oeste",
     description:
       "Conocé todo sobre el fútbol femenino en la zona oeste de Buenos Aires. Entrenamientos, torneos y novedades en Haedo, Ramos, Ituzaingó y El Palomar.",
-    url: "https://futbolfem.vercel.app",
+    url: "https://futbol-fem.vercel.app",
     siteName: "FutbolFem",
     images: [
       {
-        url: "https://futbolfem.vercel.app/logo.png",
+        url: "https://futbol-fem.vercel.app/logo.png",
         width: 800,
         height: 800,
         alt: "Logo FutbolFem - Fútbol Femenino",
@@ -64,8 +64,8 @@ export default function RootLayout({ children }) {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "FutbolFem",
-              url: "https://futbolfem.vercel.app",
-              logo: "https://futbolfem.vercel.app/logo.png",
+              url: "https://futbol-fem.vercel.app",
+              logo: "https://futbol-fem.vercel.app/logo.png",
               sameAs: [
                 "https://www.instagram.com/futbolfem2025/"
               ],
@@ -80,7 +80,6 @@ export default function RootLayout({ children }) {
           
             <Navbar />  
           <main className="pt-20 lg:pt-28 xl:pt-32 ">
-            <Banner />
             <MotionConfigProvider>
               {children}
             </MotionConfigProvider>

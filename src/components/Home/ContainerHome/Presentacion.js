@@ -1,62 +1,124 @@
-import Image from 'next/image'
-import React from 'react'
+import Image from "next/image";
+import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
+import ExtensionIcon from "@mui/icons-material/Extension";
+import SwapHorizIcon from "@mui/icons-material/SwapHoriz";
+import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+
+const aprendizajes = [
+  {
+    title: "Táctica",
+    description:
+      "Posicionamiento en la cancha, estrategias de juego y toma de decisiones en equipo.",
+    Icon: ExtensionIcon,
+  },
+  {
+    title: "Técnica individual",
+    description:
+      "Pases, recepción, conducción, remates y control del balón.",
+    Icon: SportsSoccerIcon,
+  },
+  {
+    title: "Conceptos ofensivos y defensivos",
+    description:
+      "Ataque, defensa, desmarque, toma de decisiones y finalización de jugada.",
+    Icon: SwapHorizIcon,
+  },
+  {
+    title: "Preparación física y mental",
+    description:
+      "Ejercicios para mejorar la resistencia, la velocidad y la concentración.",
+    Icon: FitnessCenterIcon,
+  },
+];
+
+const beneficios = [
+  "Confianza en una misma",
+  "Trabajo en equipo",
+  "Disciplina y compromiso",
+];
 
 const Presentacion = () => {
   return (
-    <div className='p-4 md:max-w-6xl md:mx-auto md:mt-4'>
-        <h2 className="text-white text-3xl xl:text-4xl p-3 text-center">
-          Bienvenidas a Nuestra Comunidad de Futbol Femenino!
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+      <header className="max-w-3xl">
+        <span className="text-xs font-bold uppercase tracking-[0.2em] text-sky-400">
+          Quiénes somos
+        </span>
+        <h2 className="mt-3 text-3xl font-black leading-tight text-white sm:text-4xl">
+          Bienvenidas a nuestra comunidad de fútbol femenino
         </h2>
+        <p className="mt-4 text-base leading-7 text-neutral-300 sm:text-lg">
+          En nuestra escuela ofrecemos un espacio de aprendizaje, crecimiento y
+          disfrute para todas las que quieran mejorar su juego y formar parte
+          de una comunidad apasionada por el deporte. Creemos en el potencial
+          de cada jugadora y en la importancia del trabajo en equipo.
+        </p>
+      </header>
 
-        {/*imagen de integrantes*/}
-        <div className='relative w-full max-w-5xl mx-auto my-8 aspect-video rounded-lg overflow-hidden shadow-xl'>
+      <figure className="mt-8 overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-xl">
+        <div className="relative aspect-video w-full">
           <Image
-          src='/presentacion-de-4-sedes.jpeg'
-          alt="Integrantes de las 4 sedes"
-          fill
-          className='object-cover sm:object-contain md:object-cover'
-          sizes='(max-width:640) 100vw, (max-width:768px) 90vw, 1200px'
-          loading='lazy'
+            src="/presentacion-de-4-sedes.jpeg"
+            alt="Integrantes de las cuatro sedes de FutbolFem"
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1100px"
+            className="object-cover"
           />
         </div>
+        <figcaption className="border-t border-white/10 px-5 py-3 text-sm text-neutral-400">
+          Las cuatro sedes de FutbolFem en la zona oeste.
+        </figcaption>
+      </figure>
 
+      <section className="mt-14">
+        <h2 className="text-2xl font-bold text-white sm:text-3xl">
+          Qué aprenderás
+        </h2>
+        <p className="mt-2 text-neutral-400">
+          Cada entrenamiento combina juego, técnica y desarrollo personal.
+        </p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          {aprendizajes.map(({ title, description, Icon }) => (
+            <article
+              key={title}
+              className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:border-sky-400/40 hover:bg-white/[0.07] sm:p-6"
+            >
+              <div className="flex size-11 items-center justify-center rounded-xl bg-sky-500/15 text-sky-300">
+                <Icon />
+              </div>
+              <h3 className="mt-4 text-lg font-bold text-white">{title}</h3>
+              <p className="mt-2 text-sm leading-6 text-neutral-400">
+                {description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <p className="text-gray-200/60 text-xl text-left mt-3 md:text-left">
-          En nuestra escuela de fútbol femenino, ofrecemos un espacio de
-          aprendizaje, crecimiento y disfrute para todas aquellas que deseen
-          mejorar su juego y formar parte de una comunidad apasionada por el
-          deporte. Creemos en el potencial de cada jugadora y en la importancia
-          del trabajo en equipo para alcanzar nuevas metas.
+      <section className="mt-14 rounded-3xl border border-sky-400/20 bg-sky-500/5 p-6 sm:p-8">
+        <h2 className="text-2xl font-bold text-white sm:text-3xl">
+          Cómo te ayuda
+        </h2>
+        <p className="mt-3 max-w-3xl text-base leading-7 text-neutral-300">
+          Nuestros entrenamientos te permiten desarrollar habilidades que van
+          más allá del campo de juego: mejorás tu desempeño físico y técnico,
+          ganás confianza, aprendés a trabajar en equipo y a sostener una
+          disciplina que se traslada a todos los aspectos de tu vida.
         </p>
-        <h3 className="text-gray-100 font-semibold text-2xl pt-2 text-center mt-6 mb-3 md:text-left md:ml-10">Que Aprenderás?</h3>
-        <p className="text-gray-200/60 text-md text-base-7 leading-relaxed">
-          <strong className='font-semibold text-lg underline text-gray-100/80'>Táctica:</strong> Posicionamiento en la cancha, estrategias de juego y toma de
-          decisiones en equipo. <br />
-          <strong className='font-semibold text-lg underline text-gray-100/80'>Técnica Individual:</strong> Pases, recepción, conducción, remates y control
-          del balón. <br />
-          <strong className='font-semibold text-lg underline text-gray-100/80'>Conceptos Ofensivos y Defensivos:</strong> Ataque -Defensa -Desmarque- Toma de decisiones- Finalización de jugada. <br />
-          <strong className='font-semibold text-lg underline text-gray-100/80'>Preparación Física y Mental:</strong> Ejercicios para mejorar la resistencia,
-          velocidad y concentración en el partido.
-        </p>
-        <h3 className="text-gray-100 font-semibold text-2xl pt-2 text-center mt-6 mb-3 md:text-left md:ml-10">Como Te Ayuda?</h3>
-        <p className="text-gray-200/60 text-md text-base-7 leading-relaxed mb-3">
-          Nuestros entrenamientos te permitirán desarrollar habilidades que van más
-          allá del campo de juego. No solo mejorarás tu desempeño físico y
-          técnico, sino también la confianza en ti misma, el trabajo en equipo y
-          la disciplina.
-        </p>
-        <p className="text-gray-100/90 text-lg text-base-7 text-left md:text-left mb-3 leading-relaxed">¡Podés ser Parte del Equipo!</p>
-        <p className="text-gray-200/60 text-md text-base-7 text-left md:text-left leading-relaxed mb-6">
-          Sabemos que cada jugadora tiene su propio ritmo de aprendizaje, por
-          eso todas tienen la oportunidad de formar parte de un equipo para
-          competiciones futuras. Para lograrlo, solo hace falta compromiso en
-          los entrenamientos, ganas de aprender y disfrutar del fútbol. Si te
-          apasiona este deporte y quieres llevar tu juego al siguiente nivel,
-          ¡te esperamos con los brazos abiertos! ¡Vení a entrenar con nosotras y
-          forma parte de esta gran familia futbolera!
-        </p>
+        <ul className="mt-5 flex flex-wrap gap-2">
+          {beneficios.map((beneficio) => (
+            <li
+              key={beneficio}
+              className="rounded-full border border-sky-400/30 bg-sky-500/10 px-4 py-2 text-sm font-medium text-sky-200"
+            >
+              {beneficio}
+            </li>
+          ))}
+        </ul>
+      </section>
+
     </div>
-  )
-}
+  );
+};
 
-export default Presentacion
+export default Presentacion;
